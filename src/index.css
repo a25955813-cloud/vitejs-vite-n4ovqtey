@@ -1,29 +1,26 @@
 /* |======================================================
-| 🎨 Enhanced Course Dashboard CSS
-|======================================================
-*/
+| 🎨 Enhanced Course Dashboard CSS (MODIFIED COLORS)
+|====================================================== */
+
 
 /* 1. Custom Properties (Variables) for Maintainability */
 :root {
-  /* Colors */
-  --color-dark-blue: #0f172a; /* Original Background */
-  --color-deep-bg: #030712; /* Deeper Background */
-  --color-card-bg: #111827; /* Slightly Lighter Card Background */
-  --color-border: #1f2937; /* Subtle Border */
-  --color-text-primary: #f9fafb; /* Light Text */
-  --color-text-secondary: #9ca3af; /* Muted Text */
+  /* Colors (improved contrast and vibrancy) */
+  --color-dark-blue: #152034;
+  --color-deep-bg: #070d1b;
+  --color-card-bg: #232940;
+  --color-border: #374151;
+  --color-text-primary: #fff;
+  --color-text-secondary: #b0b8ca;
 
-  /* New Vibrant Primary & Accent Colors */
-  --color-primary: #f97316; /* Orange (Primary Action/Highlight) */
-  --color-secondary: #10b981; /* Green (Success/Positive) */
-  --color-tertiary: #8b5cf6; /* Violet (Original Accent) */
+  --color-primary: #ff9400;    /* Strong orange */
+  --color-secondary: #21d179;  /* Vibrant green */
+  --color-tertiary: #726aff;   /* Brighter violet */
 
   /* Spacing & Radius */
   --spacing-unit: 1rem;
   --radius-md: 0.75rem; /* 12px */
-  --radius-lg: 1rem; /* 16px */
-
-  /* Transitions */
+  --radius-lg: 1rem;    /* 16px */
   --transition-fast: 0.2s ease-out;
 }
 
@@ -36,7 +33,7 @@
 
 /* 3. Body/Root Styling Enhancement */
 body {
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Slightly more modern font */
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--color-deep-bg);
   color: var(--color-text-primary);
   min-height: 100vh;
@@ -55,29 +52,27 @@ body {
 
 /* --- Header Styling --- */
 .header {
-  /* More dynamic gradient using the new primary color */
-  background: linear-gradient(135deg, var(--color-primary), #ffed4a);
+  background: linear-gradient(135deg, var(--color-primary), #ffe066);
   padding: calc(var(--spacing-unit) * 3);
   border-radius: var(--radius-lg);
   margin-bottom: calc(var(--spacing-unit) * 2);
   text-align: center;
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3); /* Subtle Shadow based on Primary Color */
-  color: var(--color-deep-bg); /* Dark text on bright header */
+  box-shadow: 0 10px 30px rgba(255, 148, 0, 0.25);
+  color: #232940; /* Strong dark header text */
 }
 
 .header h1 {
-  font-size: 2.8rem; /* Slightly larger heading */
+  font-size: 2.8rem;
   margin-bottom: 0.5rem;
-  font-weight: 800; /* Extra bold */
+  font-weight: 800;
 }
 
 .header p {
-  opacity: 0.8;
+  opacity: 0.85;
   font-size: 1.1rem;
   font-weight: 500;
 }
 
-/* --- Search Box Styling --- */
 .search-box {
   position: relative;
   margin-bottom: calc(var(--spacing-unit) * 2);
@@ -95,27 +90,25 @@ body {
 
 .search-box input {
   width: 100%;
-  padding: 1rem 1rem 1rem 3.5rem; /* Increased left padding for icon */
+  padding: 1rem 1rem 1rem 3.5rem;
   background: var(--color-card-bg);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
   color: var(--color-text-primary);
   font-size: 1rem;
-  transition: border-color var(--transition-fast),
-    box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .search-box input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2);
+  box-shadow: 0 0 0 4px rgba(255, 148, 0, 0.18);
 }
 
 .search-box:focus-within .search-icon {
   color: var(--color-primary);
 }
 
-/* --- Filters Styling --- */
 .filters {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -130,20 +123,16 @@ body {
   border-radius: var(--radius-md);
   color: var(--color-text-primary);
   font-size: 1rem;
-  appearance: none; /* Hide default dropdown arrow */
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path fill="rgb(156, 163, 175)" d="M7 10l5 5 5-5z"/></svg>');
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path fill="rgb(176,184,202)" d="M7 10l5 5 5-5z"/></svg>');
   background-repeat: no-repeat;
   background-position: right 0.7rem top 50%;
   background-size: 18px auto;
 }
 
-/* --- Stats Cards Styling --- */
 .stats {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(150px, 1fr)
-  ); /* More flexible grid */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: var(--spacing-unit);
   margin-bottom: calc(var(--spacing-unit) * 2);
 }
@@ -154,8 +143,8 @@ body {
   border-radius: var(--radius-md);
   text-align: center;
   border: 1px solid var(--color-border);
-  transition: transform var(--transition-fast),
-    box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  color: var(--color-text-primary);
 }
 
 .stat-card:hover {
@@ -170,18 +159,18 @@ body {
 }
 
 .stat-card:nth-child(1) .stat-number {
-  color: var(--color-primary); /* Orange */
+  color: var(--color-primary);
 }
 .stat-card:nth-child(2) .stat-number {
-  color: var(--color-secondary); /* Green */
+  color: var(--color-secondary);
 }
 .stat-card:nth-child(3) .stat-number {
-  color: var(--color-tertiary); /* Violet */
+  color: var(--color-tertiary);
 }
 
 .stat-label {
   color: var(--color-text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   letter-spacing: 0.5px;
 }
 
@@ -196,20 +185,17 @@ body {
   background: var(--color-card-bg);
   padding: calc(var(--spacing-unit) * 1.5);
   border-radius: var(--radius-md);
-  /* Use box-shadow for a softer left highlight instead of border-left */
-  box-shadow: 4px 0 0 0 var(--color-primary) inset,
-    0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform var(--transition-fast),
-    box-shadow var(--transition-fast);
+  box-shadow: 4px 0 0 0 var(--color-primary) inset, 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   cursor: pointer;
   border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
 }
 
 .course-card:hover {
-  transform: translateY(-6px); /* More pronounced lift */
-  /* Stronger shadow on hover */
-  box-shadow: 4px 0 0 0 var(--color-primary) inset,
-    0 15px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 4px 0 0 0 var(--color-primary) inset, 0 15px 30px rgba(0,0,0,0.4);
+  background: #292d3e;
 }
 
 .card-header {
@@ -221,7 +207,7 @@ body {
 
 .dept-icon {
   font-size: 1.8rem;
-  color: var(--color-tertiary); /* Use violet for the icon */
+  color: var(--color-tertiary);
 }
 
 .semester {
@@ -231,18 +217,18 @@ body {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: var(--color-deep-bg); /* Dark text on violet pill */
+  color: #fff;
 }
 
 .course-card h3 {
-  font-size: 1.35rem; /* Slightly larger title */
+  font-size: 1.35rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .course-code {
-  color: var(--color-primary); /* Use new primary color for code */
-  font-family: 'Fira Code', monospace; /* Fira Code or similar for monospaced elements */
+  color: var(--color-primary);
+  font-family: 'Fira Code', monospace;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -260,7 +246,7 @@ body {
   color: var(--color-text-secondary);
   font-size: 0.9rem;
   padding-top: 0.5rem;
-  border-top: 1px dashed var(--color-border); /* Subtle separator */
+  border-top: 1px dashed var(--color-border);
 }
 
 /* 4. Media Queries Enhancement */
@@ -268,16 +254,13 @@ body {
   .app {
     padding: var(--spacing-unit);
   }
-
   .header h1 {
     font-size: 2.2rem;
   }
-
   .stats,
   .filters {
     grid-template-columns: 1fr;
   }
-
   .courses-grid {
     grid-template-columns: 1fr;
   }
